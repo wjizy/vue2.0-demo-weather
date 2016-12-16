@@ -4,7 +4,7 @@
                 v-model="popup"
                 position="right"
                 popup-transition="popup-fade">
-            <mt-search v-model="value"></mt-search>
+            <mt-search @keyup.enter="submit" v-model="value"></mt-search>
         </mt-popup>
     </div>
 </template>
@@ -31,6 +31,11 @@
                     this.$emit("search-city",this.value)
                }
             },
+        },
+        methods: {
+            submit () {
+                this.popup = false;
+            }
         }
     }
 </script>

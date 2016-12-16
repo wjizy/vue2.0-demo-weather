@@ -31,7 +31,7 @@ export default {
   methods: {
     request (city) {
     this.$indicator.open();
-      this.$http.get('http://www.test.com?city='+city).then((res) => {
+      this.$http.get('http://www.goodwithcode.com/weather/index.php?city='+city).then((res) => {
       console.log(res)
     this.$indicator.close();
       this.weather = res.body.weatherinfo
